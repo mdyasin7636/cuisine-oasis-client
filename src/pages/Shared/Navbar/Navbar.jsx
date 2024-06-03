@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
+  const { user, logOut } = useAuth();
+
+  const handleLogout = async () => {
+    await logOut();
+  };
+
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -29,43 +36,70 @@ const Navbar = () => {
               <li className="font-semibold text-base">
                 <Link to="/">Home</Link>
               </li>
-              <li className="font-semibold text-base">
-                <Link to="/">All Recipes</Link>
-              </li>
+              {user && (
+                <li className="font-semibold text-base">
+                  <Link to="/">All Recipes</Link>
+                </li>
+              )}
               <li className="font-semibold text-base">
                 <Link to="/">My Recipes</Link>
               </li>
               <li className="font-semibold text-base">
                 <Link to="/">FAQ</Link>
               </li>
-              <li className="font-semibold text-base">
-                <Link to="/">Dashboard</Link>
-              </li>
+              {user && (
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+              )}
+              {user && (
+                <li>
+                  <button onClick={handleLogout} className="btn btn-outline">
+                    Logout
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">Cuisine Oasis</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-          <li className="font-semibold text-base">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="font-semibold text-base">
-                <Link to="/">All Recipes</Link>
-              </li>
+            <li className="font-semibold text-base">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="font-semibold text-base">
+              <Link to="/">All Recipes</Link>
+            </li>
+            {user && (
               <li className="font-semibold text-base">
                 <Link to="/">My Recipes</Link>
               </li>
+            )}
+            <li className="font-semibold text-base">
+              <Link to="/">FAQ</Link>
+            </li>
+            {user && (
               <li className="font-semibold text-base">
-                <Link to="/">FAQ</Link>
+                <Link to="/dashboard">Dashboard</Link>
               </li>
-              <li className="font-semibold text-base">
-                <Link to="/">Dashboard</Link>
-              </li>
+            )}
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end space-x-2">
+          {user && (
+            <button
+              onClick={handleLogout}
+              className="btn btn-outline hidden lg:block"
+            >
+              Logout
+            </button>
+          )}
+          <div className="avatar">
+            <div className="w-12 rounded-full ring-2 ring-gray-700 ring-offset-base-100 ring-offset-2">
+              <img src={user?.photoURL || "/avatar.png"} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
