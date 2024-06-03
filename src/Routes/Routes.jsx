@@ -9,49 +9,60 @@ import AllRecipes from "../pages/AllRecipes/AllRecipes";
 import MyRecipes from "../pages/MyRecipes/MyRecipes";
 import Question from "../pages/Question/Question";
 import Dashboard from "../pages/Dashboard/Dashboard";
-
+import PrivateRoute from "./PrivateRoute";
+import EditProfile from "../pages/EditProfile/EditProfile";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainLayout></MainLayout>,
-      errorElement: <ErrorPage></ErrorPage>,
-      children: [
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-        {
-            path: "/all-recipes",
-            element: <AllRecipes></AllRecipes>
-        },
-        {
-            path: "/my-recipes",
-            element: <MyRecipes></MyRecipes>
-        },
-        {
-            path: "/faq",
-            element: <Question></Question>
-        },
-        {
-            path: "/login",
-            element: <Login></Login>
-        },
-        {
-            path: "/register",
-            element: <Register></Register>
-        },
-      ]
-    },
-    {
-      path: "/dashboard",
-      element: <DashboardLayout></DashboardLayout>,
-      errorElement: <ErrorPage></ErrorPage>,
-      children: [
-        {
-            path: "",
-            element: <Dashboard></Dashboard>
-        },
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/all-recipes",
+        element: <AllRecipes></AllRecipes>,
+      },
+      {
+        path: "/my-recipes",
+        element: <MyRecipes></MyRecipes>,
+      },
+      {
+        path: "/faq",
+        element: <Question></Question>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "",
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "profile/edit/:id",
+        element: <EditProfile></EditProfile>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/user/get/${params.id}`),
+      },
+    ],
+  },
+]);

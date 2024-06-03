@@ -19,9 +19,7 @@ const GoogleLogin = () => {
           body: JSON.stringify(userInfo),
         })
           .then((res) => res.json())
-          .then((data) => {
-            localStorage.setItem("token", data?.token);
-          });
+          .then((data) => console.log(data));
       }
     });
   };
