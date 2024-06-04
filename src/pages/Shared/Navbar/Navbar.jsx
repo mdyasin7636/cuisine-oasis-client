@@ -38,14 +38,14 @@ const Navbar = () => {
               </li>
               {user && (
                 <li className="font-semibold text-base">
-                  <Link to="/">All Recipes</Link>
+                  <Link to="/all-recipes">All Recipes</Link>
                 </li>
               )}
               <li className="font-semibold text-base">
-                <Link to="/">My Recipes</Link>
+                <Link to="/my-recipes">My Recipes</Link>
               </li>
               <li className="font-semibold text-base">
-                <Link to="/">FAQ</Link>
+                <Link to="/faq">FAQ</Link>
               </li>
               {user && (
                 <li>
@@ -69,15 +69,15 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="font-semibold text-base">
-              <Link to="/">All Recipes</Link>
+              <Link to="/all-recipes">All Recipes</Link>
             </li>
             {user && (
               <li className="font-semibold text-base">
-                <Link to="/">My Recipes</Link>
+                <Link to="/my-recipes">My Recipes</Link>
               </li>
             )}
             <li className="font-semibold text-base">
-              <Link to="/">FAQ</Link>
+              <Link to="/faq">FAQ</Link>
             </li>
             {user && (
               <li className="font-semibold text-base">
