@@ -15,7 +15,7 @@ const SingleRecipeCardDashboard = ({ recipe, onDelete }) => {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Your Recipe has been saved",
+          title: "Recipe has been Deleted",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -29,10 +29,10 @@ const SingleRecipeCardDashboard = ({ recipe, onDelete }) => {
         <img src={imageUrl} alt="Recipe" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Recipe Name: {name}</h2>
+        <h2 className="card-title"> {name}</h2>
         <h3 className="text-xl font-normal">Ingredients: {ingredients}</h3>
+        <h3>Cooking Time: {cookingTime}</h3>
         <h3 className="text-xl font-normal">Instructions: ${instructions}</h3>
-        <p>Cooking Time: {cookingTime}</p>
         <div className="card-actions justify-end">
           <button className="btn bg-indigo-500 text-white">
             <Link to={`/recipes/${_id}`}>See Details</Link>
