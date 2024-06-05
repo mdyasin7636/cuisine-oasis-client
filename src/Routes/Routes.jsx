@@ -14,6 +14,7 @@ import EditProfile from "../pages/EditProfile/EditProfile";
 import AddRecipe from "../pages/AddRecipe/AddRecipe";
 import AllRecipesDashboard from "../pages/AllRecipesDashboard/AllRecipesDashboard";
 import EditRecipe from "../pages/EditRecipe/EditRecipe";
+import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,13 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/recipes"),
+      },
+      {
+        path: "/recipes/:id",
+        element: <RecipeDetails></RecipeDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/recipes/${params.id}`),
       },
       {
         path: "all-recipes",

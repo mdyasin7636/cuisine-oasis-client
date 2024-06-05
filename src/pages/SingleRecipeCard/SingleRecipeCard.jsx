@@ -20,7 +20,7 @@ const SingleRecipeCard = ({ recipe }) => {
         <h3 className="text-xl font-normal">Ingredients: {ingredients}</h3>
         <div className="card-actions justify-end">
           <button className="btn btn-outline">
-            <Link to={`/products/${_id}`}>See Details</Link>
+            <Link to={`/recipes/${_id}`}>See Details</Link>
           </button>
         </div>
       </div>

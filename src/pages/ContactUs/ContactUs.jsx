@@ -3,8 +3,8 @@ import contactImg from "../../assets/contact.json"
 
 const ContactUs = () => {
     return (
-        <div className="mb-10">
-      <h2 className="text-center font-bold text-3xl mt-10">Contact Us</h2>
+        <div className="my-12">
+      <h2 className="text-center font-bold text-4xl">Contact Us</h2>
       <div className="grid md:grid-cols-2">
         <div className="">
           <Lottie className="" animationData={contactImg} loop={true} />
