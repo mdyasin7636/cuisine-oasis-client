@@ -6,7 +6,7 @@ const MyRecipes = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/recipes/${user?.email}`)
+    fetch(`https://cuisine-oasis-server.vercel.app/recipes/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setRecipes(data);

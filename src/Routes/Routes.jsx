@@ -25,13 +25,13 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/recipes"),
+        loader: () => fetch("https://cuisine-oasis-server.vercel.app/recipes"),
       },
       {
         path: "/recipes/:id",
         element: <RecipeDetails></RecipeDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/recipes/${params.id}`),
+          fetch(`https://cuisine-oasis-server.vercel.app/recipes/${params.id}`),
       },
       {
         path: "all-recipes",
@@ -72,7 +72,9 @@ export const router = createBrowserRouter([
         path: "profile/edit/:id",
         element: <EditProfile></EditProfile>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/user/get/${params.id}`),
+          fetch(
+            `https://cuisine-oasis-server.vercel.app/user/get/${params.id}`
+          ),
       },
       {
         path: "add-recipe",
@@ -86,7 +88,7 @@ export const router = createBrowserRouter([
         path: "my-recipe/edit/:id",
         element: <EditRecipe></EditRecipe>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/recipes/${params.id}`),
+          fetch(`https://cuisine-oasis-server.vercel.app/recipes/${params.id}`),
       },
     ],
   },

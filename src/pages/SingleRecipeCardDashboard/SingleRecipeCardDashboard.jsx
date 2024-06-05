@@ -7,7 +7,7 @@ const SingleRecipeCardDashboard = ({ recipe, onDelete }) => {
     recipe;
 
   const handleDelete = async () => {
-    await fetch(`http://localhost:5000/recipes/${_id}`, {
+    await fetch(`https://cuisine-oasis-server.vercel.app/recipes/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -27,7 +27,7 @@ const AddRecipe = () => {
     };
     // console.log(data);
 
-    await fetch("http://localhost:5000/recipes", {
+    await fetch("https://cuisine-oasis-server.vercel.app/recipes", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

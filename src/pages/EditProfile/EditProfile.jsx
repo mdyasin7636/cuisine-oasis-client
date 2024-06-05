@@ -19,7 +19,7 @@ const EditProfile = () => {
       email: data?.email,
     };
 
-    fetch(`http://localhost:5000/user/${data?.email}`, {
+    fetch(`https://cuisine-oasis-server.vercel.app/user/${data?.email}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -55,15 +55,15 @@ const EditProfile = () => {
         </div>
         <div className="flex flex-col">
           <label htmlFor=""> Password</label>
-          <input type="text" name="password" className="py-2 px-1 bg-slate-50" />
+          <input
+            type="text"
+            name="password"
+            className="py-2 px-1 bg-slate-50"
+          />
         </div>
         <div className="flex flex-col">
           <label htmlFor="">Photo URL</label>
-          <input
-            type="text"
-            name="picture"
-            className="py-2 px-1 bg-slate-50"
-          />
+          <input type="text" name="picture" className="py-2 px-1 bg-slate-50" />
         </div>
         <div className="flex flex-col">
           <input

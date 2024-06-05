@@ -33,7 +33,7 @@ const Register = () => {
             name: name,
             email: data?.user?.email,
           };
-          fetch("http://localhost:5000/user", {
+          fetch("https://cuisine-oasis-server.vercel.app/user", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -96,7 +96,9 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-semibold">Confirm Password</span>
+                <span className="label-text font-semibold">
+                  Confirm Password
+                </span>
               </label>
               <input
                 type="password"
@@ -108,7 +110,9 @@ const Register = () => {
             </div>
             {!passMatch && (
               <div className="my-2">
-                <p className="text-red-500 font-semibold">Password do not match!</p>
+                <p className="text-red-500 font-semibold">
+                  Password do not match!
+                </p>
               </div>
             )}
             <div className="form-control mt-6">

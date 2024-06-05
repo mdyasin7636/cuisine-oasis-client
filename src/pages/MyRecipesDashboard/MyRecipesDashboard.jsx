@@ -3,18 +3,18 @@ import SingleRecipeCardDashboard from "../SingleRecipeCardDashboard/SingleRecipe
 import useAuth from "../../hooks/useAuth";
 
 const MyRecipesDashboard = () => {
-    const { user } = useAuth();
-    const [recipes, setRecipes] = useState([]);
+  const { user } = useAuth();
+  const [recipes, setRecipes] = useState([]);
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/recipes/${user?.email}`)
-          .then((res) => res.json())
-          .then((data) => {
-            setRecipes(data);
-          });
-      }, [user]);
-    
-      console.log(recipes);
+  useEffect(() => {
+    fetch(`https://cuisine-oasis-server.vercel.app/recipes/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setRecipes(data);
+      });
+  }, [user]);
+
+  console.log(recipes);
 
   const handleDeleteRecipe = (id) => {
     setRecipes(recipes.filter((recipe) => recipe._id !== id));

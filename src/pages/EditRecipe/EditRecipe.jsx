@@ -37,13 +37,16 @@ const EditRecipe = () => {
     };
     console.log(data);
 
-    await fetch(`http://localhost:5000/recipes/${recipes._id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    await fetch(
+      `https://cuisine-oasis-server.vercel.app/recipes/${recipes._id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then(() => {
         Swal.fire({
