@@ -95,11 +95,18 @@ const Navbar = () => {
               Logout
             </button>
           )}
-          <div className="avatar">
-            <div className="w-12 rounded-full ring-2 ring-gray-700 ring-offset-base-100 ring-offset-2">
-              <img src={user?.photoURL || "/avatar.png"} />
+          {!user && (
+            <Link to="/login" className="btn btn-outline">
+              Login
+            </Link>
+          )}
+          {user && (
+            <div className="avatar">
+              <div className="w-12 rounded-full ring-2 ring-gray-700 ring-offset-base-100 ring-offset-2">
+                <img src={user?.photoURL || "/avatar.png"} />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

@@ -60,7 +60,7 @@ const Register = () => {
           <div className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text font-semibold">Name</span>
               </label>
               <input
                 type="name"
@@ -72,7 +72,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text font-semibold">Email</span>
               </label>
               <input
                 type="email"
@@ -84,7 +84,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text font-semibold">Password</span>
               </label>
               <input
                 type="password"
@@ -96,7 +96,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Confirm Password</span>
+                <span className="label-text font-semibold">Confirm Password</span>
               </label>
               <input
                 type="password"
@@ -108,12 +108,12 @@ const Register = () => {
             </div>
             {!passMatch && (
               <div className="my-2">
-                <p className="text-red-500">Password do not match!</p>
+                <p className="text-red-500 font-semibold">Password do not match!</p>
               </div>
             )}
             <div className="form-control mt-6">
               <input
-                className="btn bg-red-500 text-white"
+                className="btn btn-outline"
                 type="submit"
                 value="Register"
               />
@@ -121,10 +121,10 @@ const Register = () => {
             <div className="mt-6">
               <GoogleLogin />
             </div>
-            <div className="mt-6">
+            <div className="mt-6 font-semibold">
               <p>
                 Already have an account?
-                <Link to="/login" className="text-red-500 pl-1">
+                <Link to="/login" className=" pl-1">
                   Login
                 </Link>
               </p>

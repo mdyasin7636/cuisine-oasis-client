@@ -39,7 +39,7 @@ const Login = () => {
           <div className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text font-semibold">Email</span>
               </label>
               <input
                 type="email"
@@ -51,7 +51,7 @@ const Login = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text font-semibold">Password</span>
               </label>
               <input
                 type="password"
@@ -63,7 +63,7 @@ const Login = () => {
             </div>
             <div className="form-control mt-6">
               <input
-                className="btn bg-red-500 text-white"
+                className="btn btn-outline"
                 type="submit"
                 value="Login"
               />
@@ -71,10 +71,10 @@ const Login = () => {
             <div className="mt-6">
               <GoogleLogin />
             </div>
-            <div className="mt-6">
+            <div className="mt-6 font-semibold">
               <p>
                 New Here?
-                <Link to="/register" className="text-red-500 pl-1">
+                <Link to="/register" className="pl-1">
                   Register
                 </Link>
               </p>

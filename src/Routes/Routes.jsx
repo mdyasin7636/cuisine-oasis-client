@@ -12,9 +12,9 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import EditProfile from "../pages/EditProfile/EditProfile";
 import AddRecipe from "../pages/AddRecipe/AddRecipe";
-import AllRecipesDashboard from "../pages/AllRecipesDashboard/AllRecipesDashboard";
 import EditRecipe from "../pages/EditRecipe/EditRecipe";
 import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
+import MyRecipesDashboard from "../pages/MyRecipesDashboard/MyRecipesDashboard";
 
 export const router = createBrowserRouter([
   {
@@ -79,11 +79,11 @@ export const router = createBrowserRouter([
         element: <AddRecipe></AddRecipe>,
       },
       {
-        path: "all-recipe",
-        element: <AllRecipesDashboard></AllRecipesDashboard>,
+        path: "my-recipe",
+        element: <MyRecipesDashboard></MyRecipesDashboard>,
       },
       {
-        path: "all-recipe/edit/:id",
+        path: "my-recipe/edit/:id",
         element: <EditRecipe></EditRecipe>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/recipes/${params.id}`),

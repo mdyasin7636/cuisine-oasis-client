@@ -9,13 +9,13 @@ const EditProfile = () => {
 
     const form = e.target;
     const name = form.name.value;
-    const age = form.age.value;
-    const mobileNumber = form.mobileNumber.value;
+    const picture = form.picture.value;
+    const password = form.password.value;
 
     const userData = {
       name,
-      age,
-      mobileNumber,
+      picture,
+      password,
       email: data?.email,
     };
 
@@ -54,14 +54,14 @@ const EditProfile = () => {
           />
         </div>
         <div className="flex flex-col">
-          <label htmlFor="">User Age</label>
-          <input type="text" name="age" className="py-2 px-1 bg-slate-50" />
+          <label htmlFor=""> Password</label>
+          <input type="text" name="password" className="py-2 px-1 bg-slate-50" />
         </div>
         <div className="flex flex-col">
-          <label htmlFor="">User Mobile</label>
+          <label htmlFor="">Photo URL</label>
           <input
             type="text"
-            name="mobileNumber"
+            name="picture"
             className="py-2 px-1 bg-slate-50"
           />
         </div>
@@ -69,7 +69,7 @@ const EditProfile = () => {
           <input
             type="submit"
             value="Update Profile"
-            className="btn py-2 px-1 bg-slate-950 text-white "
+            className="btn btn-outline py-2 px-1"
           />
         </div>
       </form>

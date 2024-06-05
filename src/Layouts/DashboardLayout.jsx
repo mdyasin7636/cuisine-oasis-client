@@ -6,13 +6,13 @@ const DashboardLayout = () => {
       <div className="col-span-2 bg-gray-300 min-h-screen p-12">
         <ul>
           <li className="font-semibold text-lg p-4 w-full">
-            <Link to={"home"}>Dashboard</Link>
+            <Link to={""}>Dashboard</Link>
           </li>
           <li className="font-semibold text-lg p-4 w-full">
             <Link to={"add-recipe"}>Add Recipe</Link>
           </li>
           <li className="font-semibold text-lg p-4 w-full">
-            <Link to={"all-recipe"}>All Recipe</Link>
+            <Link to={"my-recipe"}>My Recipe</Link>
           </li>
           <li className="font-semibold text-lg p-4 w-full">
             <Link to={"/"}>Home</Link>

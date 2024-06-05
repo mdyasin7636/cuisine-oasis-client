@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 
 const SingleRecipeCard = ({ recipe }) => {
-  const { _id, name, imageUrl, ingredients } =
+  const { _id, recipeName, imageUrl, ingredients } =
     recipe;
 
   return (
@@ -16,7 +16,7 @@ const SingleRecipeCard = ({ recipe }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title"> {name}</h2>
+        <h2 className="card-title"> {recipeName}</h2>
         <h3 className="text-xl font-normal">Ingredients: {ingredients}</h3>
         <div className="card-actions justify-end">
           <button className="btn btn-outline">
